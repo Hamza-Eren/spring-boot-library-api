@@ -1,0 +1,6 @@
+ALTER TABLE authors
+ADD COLUMN user_id BIGINT UNIQUE;
+
+ALTER TABLE authors
+ADD CONSTRAINT fk_authors_user_id
+FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL;
