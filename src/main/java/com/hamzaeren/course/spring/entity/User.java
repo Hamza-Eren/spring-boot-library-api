@@ -34,7 +34,7 @@ public class User {
     @Setter
     private Role role = Role.USER;
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY, optional = false)
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, optional = false)
     private Profile profile;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -47,7 +47,6 @@ public class User {
         this.username = username;
         this.email = email;
         this.password = password;
-        this.role = Role.USER;
     }
 
     public User(String username, String email, String password, Role role) {
